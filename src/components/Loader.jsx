@@ -12,14 +12,27 @@ const Loader = () => {
       <div style={{
         width: "50px",
         height: "50px",
-        border: "4px solid rgba(96, 165, 250, 0.2)",
-        borderTop: "4px solid #60a5fa",
+        border: "4px solid rgba(255, 255, 255, 0.2)",
+        borderTop: "4px solid #ffffff",
         borderRadius: "50%",
         animation: "spin 1s linear infinite",
-        marginBottom: "20px"
-      }}></div>
+        marginBottom: "20px",
+        position: "relative"
+      }}>
+        <div style={{
+          position: "absolute",
+          top: "-4px",
+          left: "-4px",
+          width: "50px",
+          height: "50px",
+          border: "4px solid transparent",
+          borderTop: "4px solid rgba(255, 255, 255, 0.5)",
+          borderRadius: "50%",
+          animation: "spin 0.8s linear infinite reverse"
+        }}></div>
+      </div>
       <h2 style={{
-        color: "#cbd5e1",
+        color: "#ffffff",
         fontSize: "1.3rem",
         fontWeight: "500",
         letterSpacing: "0.5px"

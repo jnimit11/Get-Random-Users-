@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchUsers();
+    fetchUsers(); // eslint-disable-line react-hooks/set-state-in-effect
   }, []);
 
   const filteredUsers = users.filter((user) =>
@@ -37,7 +37,7 @@ const Home = () => {
       {/* Header */}
       <div className="header">
         <h1>Random Users</h1>
-        <p>Discover and explore random user profiles from around the world</p>
+        <p>Discover and explore random user profiles around the world</p>
       </div>
 
       {/* Search Bar */}
@@ -61,8 +61,10 @@ const Home = () => {
         <Loader />
       ) : filteredUsers.length > 0 ? (
         <div className="grid">
-          {filteredUsers.map((user) => (
-            <UserCard key={user.login.uuid} user={user} />
+          {filteredUsers.map((user, index) => (
+            <div key={user.login.uuid} style={{ animationDelay: `${index * 0.1}s` }}>
+              <UserCard user={user} />
+            </div>
           ))}
         </div>
       ) : (
